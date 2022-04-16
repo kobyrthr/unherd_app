@@ -11,5 +11,11 @@ An underground music event series
 - Users have the ability to RSVP for events
 
 ## ERD
+<img src ="images/Database Models & ERD.png">
 
 ## Designs
+
+<img src ="images/Home Screen Wires.png">
+<img src ="images/All Events Screen Wires.png">
+<img src ="images/Event ID Screen Wires.png">
+<img src ="images/Profile Screen Wires.png">
