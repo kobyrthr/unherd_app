@@ -18,3 +18,8 @@ class Event(models.Model):
     description = models.CharField(max_length=1000)
     img = models.CharField(max_length=250)
     date = models
+
+    def __str__(self):
+        return self.title
+    class Meta:
+        ordering = ['title']

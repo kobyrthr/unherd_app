@@ -1,4 +1,11 @@
-<h1>You are home now</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>You are home now</h1>
+    {% for event in events %}
+    <h3>{{event.name}}</h3>
+    {% endfor %}
+{% endblock %}
 
 
 
