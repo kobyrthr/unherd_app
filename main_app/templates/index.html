@@ -3,7 +3,11 @@
 {% block content %}
     <h1>You are home now</h1>
     {% for event in events %}
-    <h3>{{event.name}}</h3>
+    <img src="{{event.img}}" alt="">
+    <h3>{{event.title}}</h3>
+    <p>{{event.description}}</p>
+
+
     {% endfor %}
 {% endblock %}
 
