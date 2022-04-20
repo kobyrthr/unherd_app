@@ -1,11 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>You are home now</h1>
+
+    <form>
+        <div>
+            <!-- searches for the name of the cat -->
+            <input type="text" name="title" placeholder="title"/>
+            <input type="submit" value="Search"/>
+        </div>
+        <a href="/">Clear Search</a>
+    </form>
+
+    <h1>Upcoming events</h1>
     {% for event in events %}
-    <img src="{{event.img}}" alt="">
-    <h3>{{event.title}}</h3>
-    <p>{{event.description}}</p>
+    <div>
+        <img src="{{event.img}}" alt="">
+        <h3>{{event.title}}</h3>
+        <p>{{event.genres}}</p>
+        <p>{{event.description}}</p>
+        <button>
+            <a href="/<int:pk>">See details</a>
+        </button>
+    </div>
 
 
     {% endfor %}
