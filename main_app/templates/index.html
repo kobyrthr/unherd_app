@@ -19,7 +19,7 @@
         <p>{{event.genres}}</p>
         <p>{{event.description}}</p>
         <button>
-            <a href="event/<int:pk>">See details</a>
+            <a href={% url 'event_detail' pk=event.id %}>See details</a>
         </button>
     </div>
 
