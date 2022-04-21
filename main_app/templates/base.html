@@ -10,16 +10,15 @@
 </head>
 <body>
     <nav>
+        <span><a href="{% url 'signup' %}">SignUp</a></span>
+        <a href="/">Home</a>
         {% if user.is_authenticated %}
         <span> | </span>
         <span><a href="{% url 'logout' %}">Logout</a></span>
         <span> | </span>
         {% else %}
         <span><a href="{% url 'login' %}">Login</a></span>
-        <span> | </span>
-        <span><a href="{% url 'signup' %}">SignUp</a></span>
         {% endif %}
-        <a href="/">Home</a>
    
     </nav>
     {% block content %}
