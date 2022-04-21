@@ -34,13 +34,13 @@ def login_view(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():
-            u = form.cleaned_date['username']
+            u = form.cleaned_data['username']
             p = form.cleaned_data['password']
             user = authenticate(username = u, password = p)
             if user is not None:
                     if user.is_active:
                         login(request,user)
-                        return HttpResponseRedirect('/user/'+u)
+                        return HttpResponseRedirect('/')
                     else:
                         print('The account has been disabled.')
                         return render(request, 'login.html', {'form':form})
