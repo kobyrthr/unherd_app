@@ -1,14 +1,17 @@
 from pipes import Template
 from pyexpat import model
+from turtle import rt
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views.generic import View
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView
 from django.views.generic import DetailView
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from requests import request
 from .models import Event
+from .models import RSVP
 
 # Create your views here.
 
@@ -62,7 +65,6 @@ class Index(TemplateView):
         title = self.request.GET.get("title")
 
         if title != None:
-            # .filter is the sql WHERE statement and name__icontains is doing a search for any name that contains the query param
             context["events"] = Event.objects.filter(title__icontains=title)
             context["header"] = f"Searching for {title}"
         else:
@@ -72,7 +74,7 @@ class Index(TemplateView):
 
 class Event_Create(CreateView):
     model = Event
-    fields = ['img','title','description','genres']
+    fields = ['img_2','title','description','genres']
     template_name = 'event_create.html'
     success_url = '/'
     def form_valid(self, form):
@@ -81,4 +83,13 @@ class Event_Create(CreateView):
 class EventDetail(DetailView):
     model = Event
     template_name='event_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["events"] = Event.objects.all()
+        context["rsvps"] = RSVP.objects.filter(event = self.get_object())
+    #     # User = get_user_model()
+    #     # context["user"] = User.objects.all()
+        return context
+    
 

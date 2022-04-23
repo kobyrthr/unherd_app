@@ -18,6 +18,7 @@ class Event(models.Model):
     genres = models.CharField(max_length=50, choices = GENRES)
     description = models.CharField(max_length=1000)
     img = models.CharField(max_length=250)
+    img_2 = models.ImageField(upload_to='images/')
     date = models
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -31,5 +32,5 @@ class RSVP(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.name
+    def __int__(self):
+        return self.id
