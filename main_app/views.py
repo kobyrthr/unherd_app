@@ -74,7 +74,7 @@ class Index(TemplateView):
 
 class Event_Create(CreateView):
     model = Event
-    fields = ['img_2','title','description','genres']
+    fields = ['img_2','img','title','description','genres']
     template_name = 'event_create.html'
     success_url = '/'
     def form_valid(self, form):
