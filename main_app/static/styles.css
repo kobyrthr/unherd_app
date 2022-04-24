@@ -1,8 +1,14 @@
 body{
-    background-color: lavender;
-    color: black;
+    background-color: #04000C;
+    color: #EBD7FF;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+h1{
+    text-align: center;
+    margin: 24px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+}
 
 img{
     max-width: 300px;
@@ -10,16 +16,23 @@ img{
 
 a{
     text-decoration: none;
-    color: black;
+    color: #EBD7FF;
 }
 a:hover{
     cursor:pointer;
-    text-decoration: underline;
     color: red;
 }
 
-.img_card{
+.event_card{
     display: flex;
     align-items: center;
     margin-bottom: 64px;
+}
+
+.event_card img{
+    margin: auto 32px;
+}
+.event_card h1{
+    max-width: 20vh;
+    text-align: right;
 }
