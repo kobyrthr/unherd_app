@@ -13,6 +13,8 @@
         <a href="/">Home</a>
         <span> | </span>
         {% if user.is_authenticated %}
+        <span><a href="/profile">My Profile</a></span>
+        <span> | </span>
         <span><a href="/new">Create an event</a></span>
         <span> | </span>
         <span><a href="{% url 'logout' %}">Logout</a></span>

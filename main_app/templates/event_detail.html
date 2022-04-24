@@ -11,6 +11,18 @@
     <h1>{{event.name}}</h1>
     {{event.title}}
     {{event.description}}
+<br>
+    {% for rsvp in rsvps %}
+    
+    <li>{{rsvp.user}} rsvpd for this event<br></li>
+    
+
+
+    {% endfor %}
+
+
+
+
 
 </div>
 

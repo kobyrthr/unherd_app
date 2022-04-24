@@ -1,5 +1,9 @@
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
+# if settings.DEBUG:
+#     urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
 # this like app.use() in express
 urlpatterns = [
@@ -8,5 +12,5 @@ urlpatterns = [
     path('signup/', views.signup_view, name='signup'),
     path('', views.Index.as_view(), name="home"),
     path('new/',views.Event_Create.as_view(),name='event_create'),
-    path('<int:pk>/', views.EventDetail.as_view(),name="event_detail")
-]
+    path('<int:pk>/', views.EventDetail.as_view(),name="event_detail"),
+    path('profile/', views.Profile.as_view(), name='users-profile'),]
