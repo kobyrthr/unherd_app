@@ -13,15 +13,15 @@
 
     <h1>Upcoming events</h1>
     {% for event in events %}
-    <div>
-        <img src="{{event.img}}" alt="">
-        <h3>{{event.title}}</h3>
-        <p>{{event.genres}}</p>
-        <p>{{event.description}}</p>
-        <button>
-            <a href={% url 'event_detail' pk=event.id %}>See details</a>
-        </button>
-    </div>
+    <a href={% url 'event_detail' pk=event.id %}>
+                <div class = "img_card">
+                    <h3>{{event.title}}</h3>
+                    <img src="{{event.img}}" alt="">
+                    <p>{{event.description}}</p>
+                    <p>{{event.genres}}</p>
+                    </div>
+            </a>
+        
 
 
     {% endfor %}
