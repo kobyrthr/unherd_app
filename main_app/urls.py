@@ -13,5 +13,7 @@ urlpatterns = [
     path('', views.Index.as_view(), name="home"),
     path('new/',views.Event_Create.as_view(),name='event_create'),
     path('<int:pk>/', views.EventDetail.as_view(),name="event_detail"),
+    path('<int:pk>/edit_event/', views.EventUpdate.as_view(),name= "event_update"),
+    # path('<int:pk>/delete_event/', views.EventDelete.as_view(),name= "event_delete"),
     path('profile/', views.ProfileView.as_view(), name='users-profile'),
     ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
