@@ -13,4 +13,5 @@ urlpatterns = [
     path('', views.Index.as_view(), name="home"),
     path('new/',views.Event_Create.as_view(),name='event_create'),
     path('<int:pk>/', views.EventDetail.as_view(),name="event_detail"),
-    path('profile/', views.Profile.as_view(), name='users-profile'),]
+    path('profile/', views.ProfileView.as_view(), name='users-profile'),
+    ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 

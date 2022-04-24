@@ -1,4 +1,5 @@
 from pipes import Template
+import profile
 from pyexpat import model
 from turtle import rt
 from django.http import HttpResponseRedirect
@@ -11,8 +12,7 @@ from django.views.generic import DetailView
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from requests import request
-from .models import Event
-from .models import RSVP
+from .models import Event, RSVP, Profile
 from django.contrib.auth.models import User
 
 
@@ -58,8 +58,15 @@ def login_view(request):
         form = AuthenticationForm()
         return render(request, 'login.html',{'form':form})
 
-class Profile(TemplateView):
-     template_name= 'profile.html'
+class ProfileView(TemplateView):
+    model = Profile
+    template_name= 'profile.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["events"] = Event.objects.all()
+        context["rsvps"] = RSVP.objects.filter(user=self.request.user)
+        return context
 
 class Index(TemplateView):
     template_name= 'index.html'
