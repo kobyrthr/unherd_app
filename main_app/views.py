@@ -3,6 +3,7 @@ from pyexpat import model
 from turtle import rt
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from django.views.generic import View
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView
@@ -12,6 +13,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from requests import request
 from .models import Event
 from .models import RSVP
+from django.contrib.auth.models import User
+
 
 # Create your views here.
 
@@ -54,7 +57,9 @@ def login_view(request):
     else:
         form = AuthenticationForm()
         return render(request, 'login.html',{'form':form})
-                
+
+class Profile(TemplateView):
+     template_name= 'profile.html'
 
 class Index(TemplateView):
     template_name= 'index.html'
