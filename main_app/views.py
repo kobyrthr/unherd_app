@@ -7,7 +7,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.views.generic import View
 from django.views.generic.base import TemplateView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -109,3 +109,10 @@ class EventUpdate(UpdateView):
     model = Event
     fields = ['img_2','img','title','description','genres']
     template_name = 'event_update.html'
+
+
+class EventDelete(DeleteView):
+    model = Event
+    fields = '__all__'
+    template_name="event_delete.html"
+    success_url = "/"
