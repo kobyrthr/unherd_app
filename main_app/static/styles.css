@@ -33,6 +33,15 @@ a:hover{
     font-weight: bold;
 }
 
+.event_tag{
+    border: 1px solid black;
+    display: inline;
+    padding: 5px 10px;
+    border-radius: 24px;
+    color: var(--black);
+    background-color:var(--lavender) ;
+}
+
 .search_form{
     min-width: 100%;
 }
