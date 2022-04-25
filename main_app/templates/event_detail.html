@@ -3,13 +3,13 @@
 {% block content %}
 
 <div>
+    <h1>{{event.title}}</h1>
     <img src="{{event.img}}" alt="{{event.name}}"/>
 </div>
 
 <div>
 
-    <h1>{{event.name}}</h1>
-    {{event.title}}
+    
     {{event.description}}
 <a href="{% url 'event_update' pk=event.id %}"><button>Edit event</button></a>
 <a href="{% url 'event_delete' pk=event.id %}"><button>Delete event</button></a>

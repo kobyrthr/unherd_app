@@ -1,38 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Montserrat:ital,wght@0,400;0,900;1,900&display=swap');
+
+:root{
+    --black: white;
+    --lavender: black;
+  }
+
 body{
-    background-color: #04000C;
-    color: #EBD7FF;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: var(--black);
+    color: var(--lavender);
+    font-family: 'IBM Plex Mono', monospace;
 }
+
 
 h1{
     text-align: center;
     margin: 24px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-family:'Montserrat', 'Arial Narrow', Arial, sans-serif ;
 }
+
 
 img{
     max-width: 300px;
+    max-height: 180px;
 }
 
 a{
     text-decoration: none;
-    color: #EBD7FF;
+    color: var(--lavender);
 }
 a:hover{
     cursor:pointer;
-    color: red;
+    font-weight: bold;
+}
+
+.search_form{
+    min-width: 100%;
+}
+
+.search_form input:first-of-type{
+    min-width: 85%;
 }
 
 .event_card{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 64px;
+    justify-content: space-between;
 }
 
 .event_card img{
     margin: auto 32px;
 }
 .event_card h1{
-    max-width: 20vh;
     text-align: right;
+    margin: 0;
+}
+
+.event_card_div{
+    width: 100%;
+}
+
+.event_card_div_img{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }

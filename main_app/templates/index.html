@@ -2,28 +2,51 @@
 
 {% block content %}
 
-    <form>
-        <div>
-            <!-- searches for the name of the cat -->
-            <input type="text" name="title" placeholder="title"/>
-            <input type="submit" value="Search"/>
+<div class="container">
+    <div class="row">
+        <div class="columns twelve search_form">
+
+            <form>
+                <div>
+                    <!-- searches for the name of the cat -->
+                    <input type="text" name="title" placeholder="title"/>
+                    <input type="submit" value="🔎"/>
+                </div>
+                <a href="/">Clear Search</a>
+            </form>
+
         </div>
-        <a href="/">Clear Search</a>
-    </form>
+    </div>
+</div>
 
-    <h1>Upcoming events</h1>
+    
+    <div class="container">
+        <div class="row">
+            <h1 class="columns twelve">Upcoming events</h1>
+    </div>
     {% for event in events %}
-    <a href={% url 'event_detail' pk=event.id %}>
-                <div class = "event_card">
-                    <h1>{{event.title}}</h1>
-                    <img src="{{event.img}}" alt="">
-                    <div>
-                        <p>{{event.description}}</p>
-                        <p>{{event.genres}}</p>
+   <div class="container">
+       <div class="row">
+           <div class="event_wrapper columns twelve">
 
-                    </div>
-                    </div>
-            </a>
+               <a href={% url 'event_detail' pk=event.id %}>
+                           <div class = "event_card">
+                               <div class="event_card_div"><h1>"{{event.title}}
+                                   "
+                               </h1></div>
+                               <div class="event_card_div_img"><img src="{{event.img}}" alt=""></div>
+                               <div class="event_card_div">
+                                   <p>{{event.description}}</p>
+                                   <p>{{event.genres}}</p>
+           
+                               </div>
+                               </div>
+                </a>
+
+           </div>
+           
+       </div>
+   </div>
         
 
 
