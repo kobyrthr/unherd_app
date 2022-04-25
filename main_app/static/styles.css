@@ -5,10 +5,16 @@
     --lavender: black;
   }
 
+  nav{
+      display: flex;
+      justify-content: center;
+  }
+
 body{
     background-color: var(--black);
     color: var(--lavender);
     font-family: 'IBM Plex Mono', monospace;
+    font-size: 2em;
 }
 
 
@@ -73,4 +79,29 @@ a:hover{
     width: 100%;
     display: flex;
     justify-content: space-around;
+}
+
+.event_detail_pg{
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.event_detail_pg p{
+   width: 100%;
+}
+
+.update_delete_event{
+    display: flex;
+    justify-content: center;
+}
+
+.event_detail_img{
+    display: flex;
+    margin: 56px auto;
+}
+
+.event_detail_img .columns{
+
 }

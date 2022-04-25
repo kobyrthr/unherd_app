@@ -1,32 +1,61 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h1>{{event.title}}</h1>
 
-<div>
-    <h1>{{event.title}}</h1>
-    <img src="{{event.img}}" alt="{{event.name}}"/>
+<div class="container update_delete_event">
+    <div class="row">
+        <a href="{% url 'event_update' pk=event.id %}"><button>Edit event</button></a>
+        <a href="{% url 'event_delete' pk=event.id %}"><button>Delete event</button></a>
+    </div>
 </div>
 
-<div>
+
+<section class="event_detail_pg">
+
+    <div class="container event_detail_wrapper event_detail_img ">
+        <div class="row "> 
+            <div class="columns six">
+                <img src="{{event.img}}" alt="{{event.name}}"/>
+            </div>
+            <div class="columns six">
+                <div class="event_card_div">
+                    <p>{{event.description}}</p>
+                    <p class = "event_tag">{{event.genres}}</p>
+                    <div><button style="color:white; background-color:black; margin-top: 16px;">RSVP</button></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="columns">
+    
+    
+                <p>{{event.description}}</p>
+            <br>
+                {% for rsvp in rsvps %}
+                
+                <li>{{rsvp.user}} rsvpd for this event<br></li>
+                
+            
+            
+                {% endfor %}
+    
+            </div>    
+        </div>    
+    
+        
+    
+    
+    
+    
+    </div>
+</section>
 
     
-    {{event.description}}
-<a href="{% url 'event_update' pk=event.id %}"><button>Edit event</button></a>
-<a href="{% url 'event_delete' pk=event.id %}"><button>Delete event</button></a>
-<br>
-    {% for rsvp in rsvps %}
-    
-    <li>{{rsvp.user}} rsvpd for this event<br></li>
-    
-
-
-    {% endfor %}
-
-
-
-
-
-</div>
 
 
 {% endblock %}
