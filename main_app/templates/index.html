@@ -2,29 +2,96 @@
 
 {% block content %}
 
-    <form>
-        <div>
-            <!-- searches for the name of the cat -->
-            <input type="text" name="title" placeholder="title"/>
-            <input type="submit" value="Search"/>
+<div class="container">
+    <div class="row">
+        <div class="columns twelve search_form">
+
+            <form>
+                <div>
+                    <!-- searches for the name of the cat -->
+                    <input type="text" name="title" placeholder="title"/>
+                    <input type="submit" value="🔎"/>
+                </div>
+                <a href="/">Clear Search</a>
+            </form>
+
         </div>
-        <a href="/">Clear Search</a>
-    </form>
-
-    <h1>Upcoming events</h1>
-    {% for event in events %}
-    <div>
-        <img src="{{event.img}}" alt="">
-        <h3>{{event.title}}</h3>
-        <p>{{event.genres}}</p>
-        <p>{{event.description}}</p>
-        <button>
-            <a href={% url 'event_detail' pk=event.id %}>See details</a>
-        </button>
     </div>
+</div>
+
+    
+    <div class="container">
+    <div class="container event_block">
+        <div class="row">
+           {% for event in events %}
+           <div class="event_wrapper load-hidden columns twelve">
+
+               <a href={% url 'event_detail' pk=event.id %} class="event_wrapper">
+                           <div class = "event_card">
+                               <div class="event_card_div"><h1>{{event.title}}
+                                   
+                               </h1></div>
+                               <div class="event_card_div_img"><img src="{{event.img}}" alt=""></div>
+                               <div class="event_card_div">
+                                   <p>{{event.description}}</p>
+                                   <p class = "event_tag">{{event.genres}}</p>
+           
+                               </div>
+                               </div>
+                </a>
+
+           </div>
+           
+           {% endfor %}
+           {% for event in events %}
+           <div class="event_wrapper load-hidden columns twelve">
+
+               <a href={% url 'event_detail' pk=event.id %} class="event_wrapper">
+                           <div class = "event_card">
+                               <div class="event_card_div"><h1>{{event.title}}
+                                   
+                               </h1></div>
+                               <div class="event_card_div_img"><img src="{{event.img}}" alt=""></div>
+                               <div class="event_card_div">
+                                   <p>{{event.description}}</p>
+                                   <p class = "event_tag">{{event.genres}}</p>
+           
+                               </div>
+                               </div>
+                </a>
+
+           </div>
+           
+           {% endfor %}
+           {% for event in events %}
+           <div class="event_wrapper load-hidden columns twelve">
+
+               <a href={% url 'event_detail' pk=event.id %} class="event_wrapper">
+                           <div class = "event_card">
+                               <div class="event_card_div"><h1>{{event.title}}
+                                   
+                               </h1></div>
+                               <div class="event_card_div_img"><img src="{{event.img}}" alt=""></div>
+                               <div class="event_card_div">
+                                   <p>{{event.description}}</p>
+                                   <p class = "event_tag">{{event.genres}}</p>
+           
+                               </div>
+                               </div>
+                </a>
+
+           </div>
+           
+           {% endfor %}
+           
+       </div>
+   </div>
+        
 
 
-    {% endfor %}
+
+
+
 {% endblock %}
 
 
