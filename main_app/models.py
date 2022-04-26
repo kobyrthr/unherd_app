@@ -5,11 +5,26 @@ from django.shortcuts import render
 # Create your models here.
 
 GENRES = [
-    ("Hip-hop","hh"),
-    ("Go-go","gg"),
-    ("Dance","d"),
-    ("Electronic","e"),
-    ("Metal","m")
+    ("Hip-hop","Hip-hop"),
+    ("Go-go","Go-go"),
+    ("Dance","Dance"),
+    ("Electronic","Electronic"),
+    ("Metal","Metal")
+]
+
+EVENT_IMAGES =[
+("https://i.imgur.com/lRoQdnp.jpg", "Pink Room with Tree"),
+("https://i.imgur.com/PHkcUmE.jpg", "Light Exhibit and Dark Male Sillhouette"),
+("https://i.imgur.com/7jzYmng.jpg", "Art Gallery"),
+("https://i.imgur.com/NLFOoET.jpg", "Dinosaur Skeleton Exhibit"),
+("https://i.imgur.com/1kCMaKp.jpg", "Neon Globe Exhibit"),
+("https://i.imgur.com/nlcBzWk.jpg", "Street Projector Art"),
+("https://i.imgur.com/r1oFmIj.jpg", "Neon Hallway"),
+("https://i.imgur.com/WJRdvrB.jpg", "Portrait Behind Wet Glass"),
+("https://i.imgur.com/Z2G7Rq8.jpg", "Kaleidoscope Portrait"),
+("https://i.imgur.com/BgYsieG.jpg7", "Neon Entrance"),
+("https://i.imgur.com/rggt66b.jpg", "The Matrix Aesthetic"),
+("https://i.imgur.com/x68h9hP.jpg", "It's Inside Us All")
 ]
 
 #EVENT MODEL : id, owner, photo url, title,long description, date, location, genres
@@ -19,7 +34,7 @@ class Event(models.Model):
     genres = models.CharField(max_length=50, choices = GENRES)
     description = models.CharField(max_length=1000)
     img = models.CharField(max_length=250)
-    img_2 = models.ImageField(default='media/media/event_images/default.jpg', upload_to='media/event_images')
+    img_2 = models.CharField(max_length=1000, choices = EVENT_IMAGES)
     date = models
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
