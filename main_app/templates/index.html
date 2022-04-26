@@ -22,14 +22,14 @@
     
     <div class="container">
         <div class="row">
-            <h1 class="columns twelve">Upcoming events</h1>
+            <h1 class="columns twelve meme">Upcoming events</h1>
     </div>
-    {% for event in events %}
-   <div class="container">
-       <div class="row">
-           <div class="event_wrapper columns twelve">
+    <div class="container event_block">
+        <div class="row">
+           {% for event in events %}
+           <div class="event_wrapper load-hidden columns twelve">
 
-               <a href={% url 'event_detail' pk=event.id %}>
+               <a href={% url 'event_detail' pk=event.id %} class="event_wrapper">
                            <div class = "event_card">
                                <div class="event_card_div"><h1>"{{event.title}}
                                    "
@@ -45,12 +45,12 @@
 
            </div>
            
+           {% endfor %}
        </div>
    </div>
         
 
 
-    {% endfor %}
 
 
 
