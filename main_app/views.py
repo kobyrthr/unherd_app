@@ -125,9 +125,11 @@ class RSVP_Post(CreateView, ModelForm):
     model = RSVP
     fields = '__all__'
     template_name = 'rsvp_post.html'
-    def RSVP_Create(request, event_id):
+    success_url = '/'
+    def RSVP_Create(request, event_id, user_id):
         context ={}
-        event = Event.objects.get(id=event_id)
+        event = Event.objects.get(event_id=event_id)
+        user = User.objects.get(user_id=user_id)
         form = RSVPForm(request.POST or None, initial={'event': event})
         if form.is_valid():
             form.save()
