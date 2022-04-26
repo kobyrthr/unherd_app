@@ -1,1 +1,1 @@
-ScrollReveal().reveal(document.querySelectorAll(".event_wrapper"),{ interval: 200 });
+ScrollReveal().reveal(document.querySelectorAll(".event_wrapper"),{ interval: 300 });

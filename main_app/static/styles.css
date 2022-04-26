@@ -102,3 +102,18 @@ a:hover{
     display: flex;
     margin: 56px auto;
 }
+
+.event_wrapper{
+    padding-top: 2em;
+    border-top: 1px solid var(--lavender);
+}
+
+svg { width: 30%; }
+svg textPath { 
+  font-size: 56px;
+	font-family:  sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 20px;
+	fill: #111;
+  background: #333;
+}

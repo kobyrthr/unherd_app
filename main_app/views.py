@@ -116,3 +116,4 @@ class EventDelete(DeleteView):
     fields = '__all__'
     template_name="event_delete.html"
     success_url = "/"
+
