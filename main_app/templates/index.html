@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
 <div class="container">
     <div class="row">
         <div class="columns twelve search_form">
@@ -31,7 +30,7 @@
                                <div class="event_card_div"><h1>{{event.title}}
                                    
                                </h1></div>
-                               <div class="event_card_div_img"><img src="{{event.img}}" alt=""></div>
+                               <div class="event_card_div_img"><img src="{{event.img_2}}" alt="not found"></div>
                                <div class="event_card_div">
                                    <p>{{event.description}}</p>
                                    <p class = "event_tag">{{event.genres}}</p>
@@ -41,47 +40,7 @@
                 </a>
 
            </div>
-           
-           {% endfor %}
-           {% for event in events %}
-           <div class="event_wrapper load-hidden columns twelve">
 
-               <a href={% url 'event_detail' pk=event.id %} class="event_wrapper">
-                           <div class = "event_card">
-                               <div class="event_card_div"><h1>{{event.title}}
-                                   
-                               </h1></div>
-                               <div class="event_card_div_img"><img src="{{event.img}}" alt=""></div>
-                               <div class="event_card_div">
-                                   <p>{{event.description}}</p>
-                                   <p class = "event_tag">{{event.genres}}</p>
-           
-                               </div>
-                               </div>
-                </a>
-
-           </div>
-           
-           {% endfor %}
-           {% for event in events %}
-           <div class="event_wrapper load-hidden columns twelve">
-
-               <a href={% url 'event_detail' pk=event.id %} class="event_wrapper">
-                           <div class = "event_card">
-                               <div class="event_card_div"><h1>{{event.title}}
-                                   
-                               </h1></div>
-                               <div class="event_card_div_img"><img src="{{event.img}}" alt=""></div>
-                               <div class="event_card_div">
-                                   <p>{{event.description}}</p>
-                                   <p class = "event_tag">{{event.genres}}</p>
-           
-                               </div>
-                               </div>
-                </a>
-
-           </div>
-           
            {% endfor %}
            
        </div>

@@ -19,7 +19,7 @@ class Event(models.Model):
     genres = models.CharField(max_length=50, choices = GENRES)
     description = models.CharField(max_length=1000)
     img = models.CharField(max_length=250)
-    img_2 = models.ImageField(upload_to='media/event_images')
+    img_2 = models.ImageField(default='media/media/event_images/default.jpg', upload_to='media/event_images')
     date = models
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
