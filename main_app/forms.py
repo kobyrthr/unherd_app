@@ -3,6 +3,7 @@ from .models import RSVP
 
 
 class RSVPForm(forms.ModelForm):
+    
     class Meta:
         model = RSVP
-        fields = "__all__"
+        fields = ("__all__") 

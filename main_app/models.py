@@ -37,6 +37,7 @@ class Event(models.Model):
     img_2 = models.CharField(max_length=1000, choices = EVENT_IMAGES)
     date = models
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
 
     def __str__(self):
         return self.title
@@ -47,6 +48,7 @@ class RSVP(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    
 
     def __int__(self):
         return self.id

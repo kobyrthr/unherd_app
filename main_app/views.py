@@ -3,7 +3,7 @@ import profile
 from pyexpat import model
 from turtle import rt
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views.generic import View
 from django.views.generic.base import TemplateView
@@ -121,19 +121,13 @@ class EventDelete(DeleteView):
     template_name="event_delete.html"
     success_url = "/"
 
-class RSVP_Post(CreateView, ModelForm):
-    model = RSVP
-    fields = '__all__'
+class RSVP_Post(CreateView):
+    form_class = RSVPForm
     template_name = 'rsvp_post.html'
     success_url = '/'
-    def RSVP_Create(request, event_id, user_id):
-        context ={}
-        event = Event.objects.get(event_id=event_id)
-        user = User.objects.get(user_id=user_id)
-        form = RSVPForm(request.POST or None, initial={'event': event})
-        if form.is_valid():
-            form.save()
-  
-        context['form']= form
-        return render(request, "home.html", context)
-
+    
+    def get_initial(self):
+        event = get_object_or_404(Event, id=self.kwargs.get('<int:pk>'))
+        return {
+            'event':event,
+        }
