@@ -123,3 +123,40 @@ display: flex;
 flex-direction: column;
 align-items: center;
 }
+
+.intro-div{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+    background-color: black;
+    transition: 1s;
+    color: white;
+}
+
+.logo-parts{
+    position: relative;
+    display: inline-block;
+    bottom: -20px;
+    opacity: 0;
+}
+
+.logo-parts.active{
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out .5s;
+} 
+
+.logo-parts.fade{
+    bottom: 250px;
+    opacity: 0;
+    transition: ease-in-out .5s;
+
+}
+
