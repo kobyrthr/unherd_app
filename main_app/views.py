@@ -11,7 +11,6 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormVi
 from django.views.generic import DetailView
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from requests import request
 from .models import Event, RSVP, Profile
 from django.contrib.auth.models import User
 from django.forms import ModelForm
