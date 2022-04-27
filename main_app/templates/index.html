@@ -1,6 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="intro-div">
+    <h1 class="logo">
+      <span class="logo-parts">U</span>
+      <span class="logo-parts">N</span>
+      <span class="logo-parts">H</span>
+      <span class="logo-parts">E</span>
+      <span class="logo-parts">R</span>
+      <span class="logo-parts">D</span>
+    </h1>
+    <p>Audio-visual experiences for adventurous people. </p>
+  
+  </div>
 <div class="container">
     <div class="row">
         <div class="columns twelve search_form">
@@ -30,10 +42,10 @@
                                <div class="event_card_div"><h1>{{event.title}}
                                    
                                </h1></div>
-                               <div class="event_card_div_img"><img src="{{event.img_2}}" alt="not found" style="min-width: 70%; object-fit: cover;"></div>
+                               <div class="event_card_div_img"><img src="{{event.img}}" alt="not found" style="min-width: 70%; object-fit: cover;"></div>
                                <div class="event_card_div">
                                    <p>{{event.description}}</p>
-                                   <p class = "event_tag">{{event.genres}}</p>
+                                   <p class = "event_tag">{{event.experience}}</p>
            
                                </div>
                                </div>

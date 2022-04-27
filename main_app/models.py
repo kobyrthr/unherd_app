@@ -4,12 +4,11 @@ from django.shortcuts import render
 
 # Create your models here.
 
-GENRES = [
-    ("Hip-hop","Hip-hop"),
-    ("Go-go","Go-go"),
-    ("Dance","Dance"),
-    ("Electronic","Electronic"),
-    ("Metal","Metal")
+TYPES = [
+    ("Meditation","Meditation"),
+    ("Concert","Concert"),
+    ("Exhibit","Exhibit"),
+    ("Screening","Screening")
 ]
 
 EVENT_IMAGES =[
@@ -31,10 +30,9 @@ EVENT_IMAGES =[
 
 class Event(models.Model):
     title = models.CharField(max_length=500)
-    genres = models.CharField(max_length=50, choices = GENRES)
+    experience = models.CharField(max_length=50, choices = TYPES)
     description = models.CharField(max_length=1000)
-    img = models.CharField(max_length=250)
-    img_2 = models.CharField(max_length=1000, choices = EVENT_IMAGES)
+    img = models.CharField(max_length=1000, choices = EVENT_IMAGES)
     date = models
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     

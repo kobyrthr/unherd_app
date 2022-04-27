@@ -88,9 +88,9 @@ class Index(TemplateView):
 
 class Event_Create(CreateView):
     model = Event
-    fields = ['img_2','img','title','description','genres']
+    fields = ['img','title','description','type']
     template_name = 'event_create.html'
-    success_url = '/'
+    success_url = '/index'
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
@@ -109,21 +109,21 @@ class EventDetail(DetailView):
 
 class EventUpdate(UpdateView):
     model = Event
-    fields = ['img_2','img','title','description','genres']
+    fields = ['img','title','description','type']
     template_name = 'event_update.html'
-    success_url = '/'
+    success_url = '/index'
 
 
 class EventDelete(DeleteView):
     model = Event
     fields = '__all__'
     template_name="event_delete.html"
-    success_url = "/"
+    success_url = "/index"
 
 class RSVP_Post(CreateView):
     form_class = RSVPForm
     template_name = 'rsvp_post.html'
-    success_url = '/'
+    success_url = '/index'
     
     def get_initial(self):
         event = get_object_or_404(Event, id=self.kwargs.get('<int:pk>'))
