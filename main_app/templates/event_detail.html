@@ -16,12 +16,12 @@
     <div class="container event_detail_wrapper event_detail_img ">
         <div class="row "> 
             <div class="columns six">
-                <img src="{{event.img_2}}" alt="no event picture" style="min-width: 100%; object-fit: cover;"/>
+                <img src="{{event.img}}" alt="no event picture" style="min-width: 100%; object-fit: cover;"/>
             </div>
             <div class="columns six">
                 <div class="event_card_div">
                     <p>{{event.description}}</p>
-                    <p class = "event_tag">{{event.genres}}</p>
+                    <p class = "event_tag">{{event.type}}</p>
                     <div>
                         <a href="{% url 'rsvp_post' pk=event.id %}">
                             <button style="color:white; background-color:black; margin-top: 16px;">RSVP</button>

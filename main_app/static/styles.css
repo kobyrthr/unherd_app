@@ -1,14 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Montserrat:ital,wght@0,400;0,900;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=IBM+Plex+Mono:wght@500&family=Montserrat:ital,wght@0,400;0,900;1,900&display=swap');
 
 :root{
     --black: white;
     --lavender: black;
   }
 
-  nav{
+  .logo-text{
+      font-size:3em;
       display: flex;
       justify-content: center;
+      font-family:'Alumni Sans Inline One', cursive;
+      letter-spacing: .2em;
+  }
+
+  nav{
+      display: flex;
+      justify-content: space-evenly;
+      font-family:'Montserrat', 'Arial Narrow', Arial, sans-serif ;
+      max-width: 80%;
+      margin: 1em auto;
+  }
+  nav a{
+    border: 1px solid #000;
+    border-radius: 100px;
+    padding: 0 14px;
+  }
+  nav a:hover{
+    cursor:pointer;
+    font-weight:normal;
+    background-color: black;
+    color: white;
+    
   }
 
 body{
@@ -45,8 +67,8 @@ a:hover{
     display: inline;
     padding: 5px 10px;
     border-radius: 24px;
-    color: var(--black);
-    background-color:var(--lavender) ;
+    color: var(--lavender);
+    background-color:var(--black) ;
 }
 
 .search_form{
@@ -105,7 +127,7 @@ a:hover{
 
 .event_wrapper{
     padding-top: 2em;
-    border-top: 1px solid var(--lavender);
+    border-bottom: 1px solid var(--lavender);
 }
 
 svg { width: 30%; }
@@ -117,3 +139,62 @@ svg textPath {
 	fill: #111;
   background: #333;
 }
+
+.form-styler{
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+}
+
+
+.form-styler p {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    }
+.form-styler input {
+    display: block;
+    text-align: center;
+    }
+
+.intro-div{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+    background-color: black;
+    transition: 1s;
+    color: white;
+}
+
+.logo-parts{
+    position: relative;
+    display: inline-block;
+    bottom: -20px;
+    opacity: 0;
+    font-family:'Alumni Sans Inline One', cursive;
+}
+
+.logo-parts.active{
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out .5s;
+    font-family:'Alumni Sans Inline One', cursive;
+} 
+
+.logo-parts.fade{
+    bottom: 250px;
+    opacity: 0;
+    transition: ease-in-out .5s;
+    font-family:'Alumni Sans Inline One', cursive;
+
+}
+
