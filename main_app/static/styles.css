@@ -8,7 +8,22 @@
 
   nav{
       display: flex;
-      justify-content: center;
+      justify-content: space-evenly;
+      font-family:'Montserrat', 'Arial Narrow', Arial, sans-serif ;
+      max-width: 80%;
+      margin: 1em auto;
+  }
+  nav a{
+    border: 1px solid #000;
+    border-radius: 100px;
+    padding: 0 14px;
+  }
+  nav a:hover{
+    cursor:pointer;
+    font-weight:normal;
+    background-color: black;
+    color: white;
+    
   }
 
 body{
@@ -105,7 +120,7 @@ a:hover{
 
 .event_wrapper{
     padding-top: 2em;
-    border-top: 1px solid var(--lavender);
+    border-bottom: 1px solid var(--lavender);
 }
 
 svg { width: 30%; }
