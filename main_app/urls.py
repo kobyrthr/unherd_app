@@ -7,10 +7,11 @@ from django.conf.urls.static import static
 
 # this like app.use() in express
 urlpatterns = [
-	path('login/', views.login_view, name='login'),
+	path('', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),
     path('signup/', views.signup_view, name='signup'),
-    path('', views.Index.as_view(), name="home"),
+    # path('', views.Index.as_view(), name="home"),
+    path('index/', views.Index.as_view(), name="home2"),
     path('new/',views.Event_Create.as_view(),name='event_create'),
     path('<int:pk>/', views.EventDetail.as_view(),name="event_detail"),
     path('<int:pk>/edit_event/', views.EventUpdate.as_view(),name= "event_update"),

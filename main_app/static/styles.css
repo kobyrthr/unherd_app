@@ -117,3 +117,9 @@ svg textPath {
 	fill: #111;
   background: #333;
 }
+
+.form-styler{
+display: flex;
+flex-direction: column;
+align-items: center;
+}

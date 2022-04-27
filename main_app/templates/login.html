@@ -2,10 +2,17 @@
 
 {% block content %}
 <h1>Login</h1>
-<form method="POST" action=".">
+<form method="POST" action="." class ="form-styler">
   {% csrf_token %}
   {{ form.as_p}}
   <input type="submit" value="Submit" />
 </form>
+<div style="display: flex;flex-direction: column;align-items: center;">
+
+  or<br>
+  <a href="{% url 'signup' %}"><button>sign up</button></a>
+
+</div>
+
 
 {% endblock %}
