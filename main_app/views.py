@@ -3,17 +3,20 @@ import profile
 from pyexpat import model
 from turtle import rt
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views.generic import View
 from django.views.generic.base import TemplateView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 from django.views.generic import DetailView
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from requests import request
 from .models import Event, RSVP, Profile
 from django.contrib.auth.models import User
+from django.forms import ModelForm
+from django.urls import reverse_lazy
+from .forms import RSVPForm
 
 
 # Create your views here.
@@ -109,6 +112,7 @@ class EventUpdate(UpdateView):
     model = Event
     fields = ['img_2','img','title','description','genres']
     template_name = 'event_update.html'
+    success_url = '/'
 
 
 class EventDelete(DeleteView):
@@ -117,3 +121,13 @@ class EventDelete(DeleteView):
     template_name="event_delete.html"
     success_url = "/"
 
+class RSVP_Post(CreateView):
+    form_class = RSVPForm
+    template_name = 'rsvp_post.html'
+    success_url = '/'
+    
+    def get_initial(self):
+        event = get_object_or_404(Event, id=self.kwargs.get('<int:pk>'))
+        return {
+            'event':event,
+        }
