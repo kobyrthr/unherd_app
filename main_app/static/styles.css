@@ -12,6 +12,10 @@
       font-family:'Alumni Sans Inline One', cursive;
       letter-spacing: .2em;
   }
+  .logo-text:hover{
+      color: black;
+      font-weight: normal;
+  }
 
   nav{
       display: flex;
