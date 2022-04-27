@@ -1,9 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Montserrat:ital,wght@0,400;0,900;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=IBM+Plex+Mono:wght@500&family=Montserrat:ital,wght@0,400;0,900;1,900&display=swap');
 
 :root{
     --black: white;
     --lavender: black;
+  }
+
+  .logo-text{
+      font-size:3em;
+      display: flex;
+      justify-content: center;
+      font-family:'Alumni Sans Inline One', cursive;
+      letter-spacing: .2em;
   }
 
   nav{
@@ -60,8 +67,8 @@ a:hover{
     display: inline;
     padding: 5px 10px;
     border-radius: 24px;
-    color: var(--black);
-    background-color:var(--lavender) ;
+    color: var(--lavender);
+    background-color:var(--black) ;
 }
 
 .search_form{
@@ -173,18 +180,21 @@ text-align: center;
     display: inline-block;
     bottom: -20px;
     opacity: 0;
+    font-family:'Alumni Sans Inline One', cursive;
 }
 
 .logo-parts.active{
     bottom: 0;
     opacity: 1;
     transition: ease-in-out .5s;
+    font-family:'Alumni Sans Inline One', cursive;
 } 
 
 .logo-parts.fade{
     bottom: 250px;
     opacity: 0;
     transition: ease-in-out .5s;
+    font-family:'Alumni Sans Inline One', cursive;
 
 }
 
