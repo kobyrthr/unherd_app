@@ -4,8 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+<<<<<<< HEAD
 django-heroku = "*"
 gunicorn = "*"
+=======
+pillow = "*"
+django-on-heroku = "*"
+django-heroku = "*"
+>>>>>>> 605cd6cd31e6705306b35fa65209e3c236dfc180
 
 [dev-packages]
 

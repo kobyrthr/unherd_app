@@ -11,7 +11,11 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+<<<<<<< HEAD
 import os #important!
+=======
+import os
+>>>>>>> 605cd6cd31e6705306b35fa65209e3c236dfc180
 
 if not os.environ.get('PRODUCTION'):
     from dotenv import load_dotenv
@@ -20,6 +24,10 @@ if not os.environ.get('PRODUCTION'):
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_ROOT = BASE_DIR / 'static' #new line we added
+<<<<<<< HEAD
+=======
+
+>>>>>>> 605cd6cd31e6705306b35fa65209e3c236dfc180
 
 
 # Quick-start development settings - unsuitable for production
@@ -44,6 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main_app',
+    
 ]
 
 MIDDLEWARE = [
@@ -129,5 +138,14 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+<<<<<<< HEAD
+=======
+LOGIN_REDIRECT_URL = '/'
+
+
+MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+>>>>>>> 605cd6cd31e6705306b35fa65209e3c236dfc180
 import django_heroku
 django_heroku.settings(locals())
