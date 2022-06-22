@@ -1,6 +1,5 @@
 # unherd_app
-An underground music event series
-
+The concept of this application was to build an engaging event website for a make-believe event series called Unherd. The application is built in Django. 
 
 ## User Stories
 - Users have the ability to register for an account
