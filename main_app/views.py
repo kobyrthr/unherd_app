@@ -26,7 +26,7 @@ def signup_view(request):
         if form.is_valid():
             user = form.save()
             login(request,user)
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/index')
         else:
             return render(request,'signup.html', {'form':form})
     else:
@@ -88,7 +88,7 @@ class Index(TemplateView):
 
 class Event_Create(CreateView):
     model = Event
-    fields = ['img','title','description','type']
+    fields = ['img','title','description','experience']
     template_name = 'event_create.html'
     success_url = '/index'
     def form_valid(self, form):
@@ -109,7 +109,7 @@ class EventDetail(DetailView):
 
 class EventUpdate(UpdateView):
     model = Event
-    fields = ['img','title','description','type']
+    fields = ['img','title','description','experience']
     template_name = 'event_update.html'
     success_url = '/index'
 
@@ -125,8 +125,3 @@ class RSVP_Post(CreateView):
     template_name = 'rsvp_post.html'
     success_url = '/index'
     
-    def get_initial(self):
-        event = get_object_or_404(Event, id=self.kwargs.get('<int:pk>'))
-        return {
-            'event':event,
-        }

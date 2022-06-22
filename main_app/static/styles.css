@@ -37,6 +37,13 @@
     
   }
 
+  nav a:active {
+    cursor:pointer;
+    font-weight:normal;
+    background-color: black;
+    color: white;
+  }
+
 body{
     background-color: var(--black);
     color: var(--lavender);
